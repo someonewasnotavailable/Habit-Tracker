@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./fontawesome-free-6.4.0-webflash/css/all.css">
+  <link rel="" href="">
+</head>
+<body>
+  <section class="wholeBody">
+    <div class="dropMenuleftfck">
+      <div class="logo">
+        <img src="https://t4.ftcdn.net/jpg/01/23/09/33/360_F_123093367_c7WoJ0uHCkepbgLasnGFBKK8sSNiJw6l.jpg" alt="hey">
+        <p>Someone</p>
+      </div>
+      <div class="menus">
+        <button class="menubtn selected" data-view="dashboard">Dashboard</button>
+        <button class="menubtn" data-view="habits">Habits</button>
+      </div>
+      <a href="./profile.html" class="profileBar">
+        <div class="profileAvatarWrap">
+          <img src="./images/icons8-profile-32.png" alt="profile picture">
+        </div>
+        <div class="profileInfo">
+          <p class="profileName">User</p>
+          <p class="profileXp">0000 xp</p>
+        </div>
+        <div class="profileChevron">›</div>
+      </a>
+
+    </div>
+    <div class="menuPage">
+      <div class="navbar">
+        <div class="navbarRight">
+          <img src="./images/icons8-menu-32.png" alt="">
+          <div class="lightNdark">
+            <p>☀</p>
+            <div class="ldtoggleBox">
+              <div class="ldtoggle"></div>
+            </div>
+            <p>🌙</p>
+          </div>
+        </div>
+      </div>
+      <div class="greetings">
+        <p>Good Morning, Loading...!👋</p>
+        <p>Stay consistent, the results will follow.</p>
+      </div>
+      <section class="dashboardMenu">
+        <div class="streakandProg">
+          <div class="streak snpd">
+            <img src="./images/icons8-flame-32.png" alt="fire">
+            <div class="streakinfo">
+              <p>Current Streak</p>
+              <div class="streakinfotext">
+                <p>0</p>
+                <p>‎ ‎ ‎ </p>
+                <p> days</p>
+              </div>
+            </div>
+          </div>
+          <div class="longestStreak snpd">
+            <img src="./images/icons8-trophy-32.png" alt="trophy">
+            <div class="longestStreakInfo">
+              <p>Longest Streak</p>
+              <div class="longestStreakInfotext">
+                <p>0</p>
+                <p>‎ ‎ </p>
+                <p>days</p>
+              </div>
+            </div>
+          </div>
+          <div class="habits snpd">
+            <img src="./images/icons8-checkmark-32.png" alt="checkmark">
+            <div class="habitsInfo">
+              <p>Habits Done Today</p>
+              <div class="habitsInfoText">
+                <p>0</p>
+                <p>‎ ‎ /</p>
+                <p> 0</p>
+              </div>
+            </div>
+          </div>
+          <div class="XP snpd">
+            <img src="./images/icons8-star-32.png" alt="XP">
+            <div class="XPinfo">
+              <p>Total XP</p>
+              <p>0,000</p>
+            </div>
+          </div>
+        </div>
+        <section class="habitsMain">
+          <div class="habitsMainNavbar">
+            <p>Today's Habits</p>
+            <div class="modifyHabits">
+              <button class="addHabit">+ Add Habit</button>
+              <details class="inlineMenu">
+                <summary class="clickDelete">⋮</summary>
+                <div class="menuPanel">
+                  <button type="button" class="menuAction">Delete All</button>
+                </div>
+              </details>
+              <div class="alltypesofhabits hidden">
+                <button class="workout">Workout</button>
+                <button class="book">Read a book</button>
+                <button class="water">Drink Water</button>
+                <button class="code">Code</button>
+                <button class="meditate">Meditate</button>
+                <button class="journal">Journal</button>
+                <button class="grass">Touch Grass</button>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="habit">
+            <p>⋮⋮</p>
+            <img src="./images/icons8-dumbbell-32 (1).png" alt="workout">
+            <div class="habitDetail">
+              <p>Workout</p>
+              <p>30 minutes exercise</p>
+            </div>
+            <input class="checkBoxforEachHabit" type="checkbox">
+            <img src="./images/icons8-checkmark-32.png" alt="" class="imgsmth">
+            <div class="habitsTimePeriod">
+              <p>7</p>
+              <p>days</p>
+            </div>
+            <details class="habitMenu">
+              <summary class="habitMenuTrigger">⋮</summary>
+              <div class="menuPanel">
+                <button type="button" class="menuAction">Edit</button>
+                <button type="button" class="menuAction">Delete</button>
+              </div>
+            </details>
+          </div> -->
+        </section>
+      </section>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

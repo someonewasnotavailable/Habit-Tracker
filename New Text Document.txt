@@ -1,0 +1,77 @@
+Features of habit tracker
+
+
+--landing page
+--dashboard
+--siderbar
+--dark/light Mode
+--Responsive layout
+
+day 2
+--Add habits
+--Edit habits
+--Delete Habits
+--Choose an icon
+and color for each habit
+
+
+day 3 tracking 
+--Mark habits
+--Prevent Completing the same habit twice in one day
+--Show today's progress
+--Progress bar
+
+day 4 
+--Streaks
+--Longest streaks
+--Completion Percentage
+--Xp system
+
+Day 5 
+-- Monthly Calendar
+--Click a day to view completed habits
+--Heatmap-style activity
+
+Day 6 
+--Weekly Charts
+--Monthly Charts
+--Most Consistent habit
+--Missed habits
+--Total completions
+
+Day 7 
+--Animations
+--Notfifications
+--Search
+--Filter habits
+--Mobile improvements
+
+Day 8 
+--Export/import data
+--Settings Page
+--Keyboard Shortcuts
+--Fix bugs
+--Deploy on Github pages
+
+
+
+important
+--Add habits
+--Display habits
+--Mark habit as completed
+--Local storage
+--Delete habits
+--Edit habits
+--Progress bar (no)
+--Streaks
+--longest streak
+--Statistics (no)
+--Categories (no)
+--Search (maybe)
+--Sort/Filter (NOOOOO!!!!!!)
+--Achievements 
+--Import/Export JSON (NOOOOO!!!!!!)
+--Theme Switcher (light and dark)
+--Calendar view (NOOOOO!!!!!!)
+--Heatmap (NOOOOO!!!!!!)
+--Notifs (NOOOOO!!!!!!)
