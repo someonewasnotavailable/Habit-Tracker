@@ -112,6 +112,7 @@ margin-bottom: 20px;
   border-radius: 16px;
   background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  flex-wrap: wrap;
 }
 
 .profileAvatarWrap{
@@ -194,6 +195,19 @@ margin-bottom: 20px;
   padding: 14px 16px;
 }
 
+.profileProgressBox{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileProgressHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
 .detailLabel{
   font-size: 12px;
   opacity: 0.7;
@@ -203,6 +217,61 @@ margin-bottom: 20px;
 .detailValue{
   font-size: 16px;
   font-weight: 600;
+}
+
+.profileProgressValue{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--selected);
+}
+
+.progressTrack{
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFill{
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--selected), #8b7cff);
+  transition: width 0.3s ease;
+}
+
+.profileProgressCaption{
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.profileProgressWrap{
+  width: 100%;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profileBar .profileProgressHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.profileBar .detailLabel{
+  margin-bottom: 0;
+  font-size: 11px;
+}
+
+.profileBar .profileProgressValue{
+  font-size: 12px;
+}
+
+.profileBar .profileProgressCaption{
+  font-size: 11px;
 }
 
 .navbarRight{
@@ -829,5 +898,147 @@ body.light .menuAction:hover{
 
   .habitsTimePeriod p{
     font-size: 7px;
+  }
+}
+
+@media (max-width: 375px) {
+  .logo{
+    padding-left: 4px;
+  }
+
+  .logo img{
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+  }
+
+  .logo p{
+    font-size: 13px;
+  }
+
+  .menus button{
+    font-size: 12px;
+    height: 45px;
+  }
+
+  .greetings p:first-child{
+    font-size: 18px;
+  }
+
+  .greetings p:nth-child(2){
+    font-size: 11px;
+  }
+
+  .snpd{
+    height: auto;
+    padding: 12px;
+    min-height: 80px;
+  }
+
+  .snpd img{
+    margin-right: 12px;
+    margin-left: 12px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .streakinfotext > p:first-child,
+  .habitsInfoText > p:first-child,
+  .longestStreakInfotext > p:first-child{
+    font-size: 24px;
+  }
+
+  .streakinfo > p:first-child,
+  .longestStreakInfo > p:first-child,
+  .habitsInfo > p:first-child,
+  .XPinfo > p:first-child{
+    font-size: 11px;
+  }
+
+  .habitsMainNavbar{
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .habit{
+    padding: 8px 6px;
+    min-height: 40px;
+  }
+
+  .habitIcon{
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  .habitIcon img{
+    width: 18px;
+    height: 18px;
+  }
+
+  .habitDetail > p:first-child{
+    font-size: 10px;
+  }
+
+  .habitDetail p{
+    font-size: 8px;
+  }
+
+  .habitsTimePeriod{
+    width: 16px;
+    margin-left: 8px;
+  }
+
+  .habitsTimePeriod p:first-child{
+    font-size: 13px;
+  }
+
+  .habitsTimePeriod p{
+    font-size: 6px;
+  }
+
+  .habit > p:last-child{
+    margin-left: 8px;
+    margin-right: 4px;
+    font-size: 16px;
+  }
+
+  .checkBoxforEachHabit{
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+  }
+
+  .imgsmth{
+    margin-left: -42px;
+    margin-right: 8px;
+  }
+
+  .profilePage{
+    padding: 12px 8px;
+  }
+
+  .profileBar,
+  .profileCard{
+    margin: 8px 6px 0;
+    padding: 10px 8px;
+  }
+
+  .profileAvatarWrap{
+    width: 40px;
+    height: 40px;
+  }
+
+  .profileAvatarWrap img{
+    width: 20px;
+    height: 20px;
+  }
+
+  .profileName{
+    font-size: 12px;
+  }
+
+  .profileXp{
+    font-size: 10px;
   }
 }

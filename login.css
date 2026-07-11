@@ -1,0 +1,460 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+}
+
+:root{
+  --mainpagebg: rgb(10, 8, 30);
+  --outerborder: rgb(23, 26, 41);
+  --textcolor :rgb(93, 51, 194);
+  --rightbg :rgb(15, 21, 36);
+  --innerborder: rgb(26, 28, 44);
+  --greytext: rgb(143, 149, 170);
+}
+
+body{
+  overflow-x: hidden;
+  color: white;
+}
+
+.login-Wholepage{
+  background-color: var(--mainpagebg);
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.login-s21u12gbram256gb888elite{
+  width: 70vw;
+  /* margin-top: 60px; */
+  border: 2px solid var(--outerborder);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 620px;
+  border-radius: 20px;
+}
+
+.left{
+  width: 350px;
+  background: url(./images/d051ea1b-70bc-4d13-815a-0dac9b360c99.png);
+  background-size: 400px 400px;
+  background-position: 0px 220px;
+  background-repeat: no-repeat;
+}
+
+.logo{
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 280px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.logo p{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+img{
+  width: 400px;
+  height: 400px;
+}
+
+.create{
+  margin-left: 38px;
+  font-size: 28px;
+}
+
+.profile{
+  margin-left: 38px;
+  font-size: 30px;
+  color: var(--textcolor);
+}
+
+.underprofile{
+  margin-left: 38px;
+  font-size: 16px;
+  width: 240px;
+  color: var(--greytext);
+}
+
+.imgunder{
+  margin-left: 0px;
+}
+
+.login-section{
+  width: 40vw;
+  background-color: var(--rightbg);
+  border: 2px solid var(--innerborder);
+  border-radius: 12px;
+  height: 545px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-top: 55px
+}
+
+.createleft{
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.startJourney{
+  font-size: 14px;
+  color: var(--greytext);
+  margin-bottom: 34px;
+}
+
+label{
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+input{
+  margin-bottom: 30px;
+  height: 50px;
+  width: 94%;
+  background: transparent;
+  /* border: none; */
+  caret-color: white;
+  border-radius: 12px;
+  color: rgb(255, 255, 255);
+  border: 2px solid var(--innerborder) !important;
+  text-indent: 40px;
+}
+
+#email{
+  background: url(./images/icons8-email-32.png); 
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  background-size: 20px 20px;
+}
+
+#firstname{
+  background: url(./images/icons8-person-32.png);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  background-size: 20px 20px;
+}
+
+#password{
+  background: url(./images/icons8-lock-32.png);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  background-size: 20px 20px;
+}
+
+input:focus{
+  border: 2px solid var(--innerborder);
+  /* outline: none; */
+}
+
+input::placeholder{
+  color: var(--greytext);
+  text-indent: 40px;
+}
+
+/* Error styling for invalid inputs */
+input.input-error{
+  border: 2px solid #ff4444 !important;
+  background-color: rgba(255, 68, 68, 0.1);
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.3);
+}
+
+input.input-error:focus{
+  border: 2px solid #ff4444 !important;
+}
+
+.createprofilebtnfuckk{
+  height: 50px;
+  width: 94%;
+  font-size: 16px;
+  background-color: var(--textcolor);
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  position: relative;
+  /* background: rgb(116, 64, 243); */
+  background: var(--textcolor);
+}
+
+.createprofilebtnfuckk::before{
+  content: 'Create Profile';
+  width: calc(100%);
+  height: calc(100%);
+  position: absolute;
+  top: -15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: var(--textcolor); */
+  background: rgb(116, 64, 243);
+}
+
+.createprofilebtnfuckk:active:before{
+  top: -10px;
+}
+
+.createprofilebtnfuckk:focus{
+  outline: none;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet: 768px to 1024px */
+@media (max-width: 1024px) {
+  .login-s21u12gbram256gb888elite{
+    width: 85vw;
+    height: auto;
+    flex-direction: row;
+  }
+
+  .left{
+    width: 40%;
+    min-width: 280px;
+  }
+
+  .login-section{
+    width: 60%;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: auto;
+    min-height: 450px;
+  }
+
+  .logo{
+    width: 100%;
+  }
+
+  .createleft{
+    font-size: 22px;
+  }
+
+  label, input{
+    font-size: 13px;
+  }
+
+  input{
+    width: 100%;
+  }
+
+  .createprofilebtnfuckk::before{
+    font-size: 14px;
+  }
+}
+
+/* Mobile: 480px to 767px */
+@media (max-width: 768px) {
+  .login-Wholepage{
+    padding-top: 20px;
+    min-height: 100vh;
+  }
+
+  .login-s21u12gbram256gb888elite{
+    width: 95vw;
+    flex-direction: column;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .left{
+    width: 100%;
+    height: 200px;
+    background-size: 300px 300px;
+    background-position: 0px 100px;
+    border-bottom: 2px solid var(--outerborder);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .logo{
+    width: 100%;
+    margin-bottom: 15px;
+    flex-direction: column;
+  }
+
+  .logo img{
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo p{
+    font-size: 24px;
+  }
+
+  .create{
+    margin: 5px 0;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .profile{
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .underprofile{
+    margin: 10px auto 0;
+    font-size: 13px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .login-section{
+    width: 100%;
+    height: auto;
+    padding: 25px 20px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background-color: var(--rightbg);
+  }
+
+  .createleft{
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .startJourney{
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  label{
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  input{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  input::placeholder{
+    font-size: 14px;
+  }
+
+  .createprofilebtnfuckk{
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .createprofilebtnfuckk::before{
+    font-size: 13px;
+    top: -12px;
+  }
+}
+
+/* Small Mobile: Below 480px */
+@media (max-width: 480px) {
+  .login-Wholepage{
+    padding-top: 10px;
+  }
+
+  .login-s21u12gbram256gb888elite{
+    width: 98vw;
+    border-radius: 12px;
+  }
+
+  .left{
+    height: 180px;
+    background-size: 250px 250px;
+    padding: 15px;
+  }
+
+  .logo{
+    margin-bottom: 10px;
+  }
+
+  .logo img{
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo p{
+    font-size: 20px;
+  }
+
+  .create{
+    font-size: 16px;
+    margin: 3px 0;
+  }
+
+  .profile{
+    font-size: 20px;
+  }
+
+  .underprofile{
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .login-section{
+    padding: 20px 15px;
+  }
+
+  .createleft{
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .startJourney{
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  label{
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  input{
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 13px;
+  }
+
+  .createprofilebtnfuckk{
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .createprofilebtnfuckk::before{
+    font-size: 12px;
+    top: -12px;
+  }
+
+  .createprofilebtnfuckk:active:before{
+    top: -8px;
+  }
+}

@@ -1,5 +1,8 @@
 'use strict';
 
+if (!localStorage.getItem('loggedIn?')) window.location.href = "index.html"
+else console.log('signed in');
+
 const STORAGE_KEY = 'habitTrackerState';
 const THEME_KEY = 'habitTrackerTheme';
 
@@ -21,6 +24,23 @@ const xpEl = document.querySelector('.XPinfo > p:last-child');
 const profileXpEl = document.querySelector('.profileXp');
 const profileNameEl = document.querySelector('.profileName');
 const profileDetailValues = document.querySelectorAll('.profileDetailBox .detailValue');
+const profileProgressValueEl = document.querySelector('.profileProgressValue');
+const profileProgressFillEl = document.querySelector('.progressFill');
+const profileProgressCaptionEl = document.querySelector('.profileProgressCaption');
+const sidebarProgressValueEl = document.querySelector('.profileBar .profileProgressValue');
+const sidebarProgressFillEl = document.querySelector('.profileBar .progressFill');
+const sidebarProgressCaptionEl = document.querySelector('.profileBar .profileProgressCaption');
+const greetings = document.querySelector('.greetings p:first-child')
+
+if (window.location.pathname !== '/profile.html') {
+  greetings.textContent = `Good Morning, ${localStorage.getItem('userName')}!👋`
+}
+else {
+  console.log('something');
+  
+}
+profileNameEl.textContent = `${localStorage.getItem('userName')}`
+
 
 const habitTemplates = {
   Workout: { title: 'Workout', description: '30 minutes exercise', days: '7' },
@@ -100,12 +120,24 @@ const updateProfilePage = () => {
   if (!profileXpEl && !profileNameEl && profileDetailValues.length === 0) return;
 
   if (profileXpEl) profileXpEl.textContent = `${formatXP(appState.xpPoints)} xp`;
-  if (profileNameEl) profileNameEl.textContent = 'User';
+  if (profileNameEl) profileNameEl.textContent = `${localStorage.getItem('userName')}`;
 
   const values = Array.from(profileDetailValues);
   if (values[0]) values[0].textContent = `${appState.currentStreak} days`;
   if (values[1]) values[1].textContent = `${appState.longestStreak} days`;
   if (values[2]) values[2].textContent = `${appState.completedHabits} / ${appState.totalHabits}`;
+
+  const totalHabits = appState.totalHabits || 0;
+  const completedHabits = appState.completedHabits || 0;
+  const progressPercent = totalHabits > 0 ? Math.round((completedHabits / totalHabits) * 100) : 0;
+
+  if (profileProgressValueEl) profileProgressValueEl.textContent = `${progressPercent}%`;
+  if (profileProgressFillEl) profileProgressFillEl.style.width = `${progressPercent}%`;
+  if (profileProgressCaptionEl) profileProgressCaptionEl.textContent = `${completedHabits} of ${totalHabits} habits completed`;
+
+  if (sidebarProgressValueEl) sidebarProgressValueEl.textContent = `${progressPercent}%`;
+  if (sidebarProgressFillEl) sidebarProgressFillEl.style.width = `${progressPercent}%`;
+  if (sidebarProgressCaptionEl) sidebarProgressCaptionEl.textContent = `${completedHabits} of ${totalHabits} habits completed`;
 };
 
 const updateSummary = () => {
@@ -149,8 +181,8 @@ const createHabitElement = habit => {
 };
 
 const renderHabits = () => {
-  const existingHabits = habitsCont.querySelectorAll('.habit');
-  existingHabits.forEach(habit => habit.remove());
+    const existingHabits = habitsCont.querySelectorAll('.habit');
+    existingHabits.forEach(habit => habit.remove());
 
   appState.habits.forEach(createHabitElement);
 };
@@ -242,6 +274,12 @@ const deleteHabit = habitId => {
   updateSummary();
 };
 
+const closeMenu = menuElement => {
+  if (menuElement?.tagName === 'DETAILS') {
+    menuElement.removeAttribute('open');
+  }
+};
+
 const deleteAllHabits = () => {
   appState.habits = [];
   appState.totalHabits = 0;
@@ -309,21 +347,26 @@ if (habitsCont) {
 
     const habitCard = event.target.closest('.habit');
     const habitId = habitCard?.dataset.id;
+    const habitMenu = habitCard?.querySelector('.habitMenu');
 
     if (!habitId) return;
 
     if (actionButton.classList.contains('editHabitAction') && habitTypeMenu) {
+      closeMenu(habitMenu);
       habitTypeMenu.classList.toggle('hidden');
       habitTypeMenu.dataset.editingHabitId = habitId;
     }
 
     if (actionButton.classList.contains('deleteHabitAction')) {
+      closeMenu(habitMenu);
       deleteHabit(habitId);
     }
   });
 }
 
 document.querySelector('.inlineMenu .menuAction')?.addEventListener('click', () => {
+  const inlineMenu = document.querySelector('.inlineMenu');
+  closeMenu(inlineMenu);
   deleteAllHabits();
 });
 
@@ -332,11 +375,14 @@ selectHabit.forEach(Each => {
     selectHabit.forEach(remove => { remove.classList.remove('clicked'); });
     e.target.classList.toggle('clicked');
 
-    if (habitTypeMenu?.dataset.editingHabitId) {
-      addNewHabit(e.target.textContent, habitTypeMenu.dataset.editingHabitId);
-      delete habitTypeMenu.dataset.editingHabitId;
-    } else {
-      addNewHabit(e.target.textContent);
+    if (habitTypeMenu) {
+      habitTypeMenu.classList.add('hidden');
+      if (habitTypeMenu.dataset.editingHabitId) {
+        addNewHabit(e.target.textContent, habitTypeMenu.dataset.editingHabitId);
+        delete habitTypeMenu.dataset.editingHabitId;
+      } else {
+        addNewHabit(e.target.textContent);
+      }
     }
   });
 });

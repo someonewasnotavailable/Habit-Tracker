@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/icons8-profile-32.png">
+    <link rel="shortcut icon" href="./images/icons8-profile-32.png">
 </head>
 <body>
     <section class="profilePage">
@@ -30,6 +32,16 @@
             <div class="profileDetailBox">
                 <p class="detailLabel">Habits Completed</p>
                 <p class="detailValue">0 / 0</p>
+            </div>
+            <div class="profileDetailBox profileProgressBox">
+                <div class="profileProgressHeader">
+                    <p class="detailLabel">Completion Progress</p>
+                    <p class="profileProgressValue">0%</p>
+                </div>
+                <div class="progressTrack" aria-hidden="true">
+                    <div class="progressFill"></div>
+                </div>
+                <p class="profileProgressCaption">0 of 0 habits completed</p>
             </div>
         </div>
     </section>
