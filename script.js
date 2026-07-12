@@ -32,7 +32,7 @@ const sidebarProgressFillEl = document.querySelector('.profileBar .progressFill'
 const sidebarProgressCaptionEl = document.querySelector('.profileBar .profileProgressCaption');
 const greetings = document.querySelector('.greetings p:first-child')
 
-if (window.location.pathname !== '/profile.html') {
+if (!window.location.pathname.includes('/profile.html')) {
   greetings.textContent = `Good Morning, ${localStorage.getItem('userName')}!👋`
 }
 else {
